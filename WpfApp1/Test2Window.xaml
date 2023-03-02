@@ -1,0 +1,52 @@
+﻿<Window
+    x:Class="WpfApp1.Test2Window"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfApp1"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Test2Window"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid>
+        <Canvas
+            x:Name="canvas" ManipulationInertiaStarting="canvas_ManipulationInertiaStarting"
+            ManipulationDelta="image_ManipulationDelta"
+            ManipulationStarting="image_ManipulationStarting">
+            <Image
+                Canvas.Left="23"
+                Canvas.Top="25"
+                Width="234"
+                Height="217"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                IsManipulationEnabled="True"
+                Source="me.jpg">
+                <Image.RenderTransform>
+                    <MatrixTransform />
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                Canvas.Left="304"
+                Canvas.Top="120"
+                Width="200"
+                IsManipulationEnabled="True"
+                Source="me.jpg">
+                <Image.RenderTransform>
+                    <MatrixTransform />
+                </Image.RenderTransform>
+            </Image>
+            <Image
+                Canvas.Left="573"
+                Canvas.Top="232"
+                Width="200"
+                IsManipulationEnabled="True"
+                Source="me.jpg">
+                <Image.RenderTransform>
+                    <MatrixTransform />
+                </Image.RenderTransform>
+            </Image>
+        </Canvas>
+    </Grid>
+</Window>

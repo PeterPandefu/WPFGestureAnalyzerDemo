@@ -1,0 +1,39 @@
+﻿<Window
+    x:Class="WpfApp1.TestWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WpfApp1"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="TestWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Canvas
+        x:Name="canvas"
+        Background="LightBlue"
+        TouchDown="Canvas_TouchDown"
+        TouchMove="canvas_TouchMove"
+        TouchUp="canvas_TouchUp">
+        <Grid Width="800" Height="450">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <ToggleButton
+                x:Name="toggleButton"
+                Width="120"
+                Height="50"
+                Click="ToggleButton_Click"
+                Content="设置手势" />
+            <Image
+                x:Name="imgGestureThumbnail"
+                Grid.Column="1"
+                Width="200"
+                Height="200"
+                Margin="0,10,0,0"
+                Source="{Binding PointPatterns, ConverterParameter=200, Converter={StaticResource GestureImageConverter}, RelativeSource={RelativeSource AncestorType={x:Type Window}, Mode=FindAncestor}}"
+                StretchDirection="DownOnly" />
+        </Grid>
+    </Canvas>
+</Window>
